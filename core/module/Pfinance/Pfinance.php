@@ -7,13 +7,13 @@ class Pfinance extends CodonModule
 	public function index() 
     {
 		
-		$this->show('/pfinance/pilot_finance.tpl');
+		$this->show('/pfinance/pilot_finance.php');
  	}
 	
 	public function pilots()
 	{
 		$this->set('allpilots', PilotData::findPilots(array()));
-		$this->show('/pfinance/pilots_finance.tpl');
+		$this->show('/pfinance/pilots_finance.php');
 	}
 }
 ?>
