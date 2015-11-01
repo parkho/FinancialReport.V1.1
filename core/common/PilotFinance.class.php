@@ -1,7 +1,7 @@
 <?php
 class PilotFinance extends CodonData
 {
-	public function fuelsum()
+	public static function fuelsum()
 	{
 		$pilotid = Auth::$userinfo->pilotid;
 		$qry =" SELECT SUM(fuelprice) as total FROM phpvms_pireps WHERE pilotid = '$pilotid'";
@@ -9,21 +9,21 @@ class PilotFinance extends CodonData
 		return $row->total;
 	}
 	
-	public function airlinefuelsum()
+	public static function airlinefuelsum()
 	{
 		$qry =" SELECT SUM(fuelprice) AS total FROM phpvms_pireps";
 		$row = DB::get_row($qry);		
 		return $row->total;
 	}
 	
-	public function airlinepayratesum()
+	public static function airlinepayratesum()
 	{
 		$qry =" SELECT SUM(pilotpay) AS total FROM phpvms_pireps";
 		$row = DB::get_row($qry);		
 		return $row->total;
 	}
 	
-	public function expensesum()
+	public static function expensesum()
 	{
 		$pilotid = Auth::$userinfo->pilotid;
 		$qry =" SELECT SUM(expenses) as total FROM phpvms_pireps WHERE pilotid = '$pilotid'";
@@ -31,14 +31,14 @@ class PilotFinance extends CodonData
 		return $row->total;
 	}
 
-	public function airlineexpensesum()
+	public static function airlineexpensesum()
 	{
 		$qry =" SELECT SUM(expenses) AS total FROM phpvms_pireps";
 		$row = DB::get_row($qry);		
 		return $row->total;
 	}
 	
-	public function grosssum()
+	public static function grosssum()
 	{
 		$pilotid = Auth::$userinfo->pilotid;
 		$qry =" SELECT SUM(gross) as total FROM phpvms_pireps WHERE pilotid = '$pilotid'";
@@ -46,14 +46,14 @@ class PilotFinance extends CodonData
 		return $row->total;
 	}
 	
-	public function airlinegrosssum()
+	public static function airlinegrosssum()
 	{
 		$qry =" SELECT SUM(gross) AS total FROM phpvms_pireps";
 		$row = DB::get_row($qry);		
 		return $row->total;
 	}
 	
-	public function revenuesum()
+	public static function revenuesum()
 	{
 		$pilotid = Auth::$userinfo->pilotid;
 		$qry =" SELECT SUM(revenue) as total FROM phpvms_pireps WHERE pilotid = '$pilotid'";
@@ -61,7 +61,7 @@ class PilotFinance extends CodonData
 		return $row->total;
 	}
 	
-	public function pilotrevenuesum($pilotid)
+	public static function pilotrevenuesum($pilotid)
 	{
 		
 		$qry = " SELECT SUM(revenue) AS total FROM phpvms_pireps WHERE pilotid='$pilotid'";
@@ -69,14 +69,14 @@ class PilotFinance extends CodonData
 		return $row->total;
 	}
 	
-	public function airlinerevenuesum()
+	public static function airlinerevenuesum()
 	{
 		$qry =" SELECT SUM(revenue) AS total FROM phpvms_pireps";
 		$row = DB::get_row($qry);		
 		return $row->total;
 	}
 	
-	public function airlineflighttimesum()
+	public static function airlineflighttimesum()
 	{
 		$qry =" SELECT SUM(flighttime) AS total FROM phpvms_pireps";
 		$row = DB::get_row($qry);		
