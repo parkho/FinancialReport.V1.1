@@ -104,4 +104,4 @@ else
 </table>
 <br />
 <hr>
-<center><a href="<?php echo url('/profile') ;?>"><input type="image" value="Back To Try Out Center - pilot"></a></center>
+<center><a href="<?php echo url('/profile') ;?>"><input type="image" value="Back To Pilot Center"></a></center>
